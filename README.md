@@ -29,5 +29,4 @@ This system flips the approach by **optimizing the itinerary around the user’s
 
 ---
 
-## Technical Architecture
 
