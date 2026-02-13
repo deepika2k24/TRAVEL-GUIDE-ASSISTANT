@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAYANA – Smart Travel Planning</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; }
+    .heading-font { font-family: 'Montserrat', sans-serif; }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold heading-font gradient-text">PAYANA</h1>
+
+    <ul class="hidden md:flex gap-8 font-medium">
+      <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+      <li><a href="#tours" class="hover:text-blue-600">Destinations</a></li>
+      <li><a href="#testimonials" class="hover:text-blue-600">Testimonials</a></li>
+      <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home"
+  class="min-h-screen bg-cover bg-center flex items-center justify-center relative"
+  style="background-image:url('https://images.unsplash.com/photo-1585167716034-5d7f10f162b9?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+    <div class="glass rounded-3xl p-10 md:p-14">
+      <h1 class="text-4xl md:text-6xl font-bold text-white heading-font mb-6">
+        Travel Smarter with <span class="gradient-text">PAYANA</span>
+      </h1>
+
+      <p class="text-lg text-gray-200 mb-8">
+        AI-powered itineraries, budget optimization, and hidden local gems —
+        all in one intelligent travel companion.
+      </p>
+
+      <a href="/chat"
+         class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-2xl transition duration-300">
+        Explore Now ✈️
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="tours" class="py-24 bg-blue-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold heading-font">
+        Plan Your <span class="gradient-text">Destination</span>
+      </h2>
+      <p class="text-gray-600 mt-4">Click a destination to auto-generate plan</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Goa -->
+      <div onclick="redirectToChat('Plan a 3 day trip to Goa under 15000')"
+           class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1563714193017-5a5fb60bc02b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="h-60 w-full object-cover">
+        <div class="p-5 text-center">
+          <h3 class="font-semibold text-xl">TUMKURU</h3>
+          <p class="text-gray-500 text-sm">BLISSFULL AND PEACEFUL</p>
+        </div>
+      </div>
+
+      <!-- Manali -->
+      <div onclick="redirectToChat('Plan a 4 day trip to Manali under 20000')"
+           class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="h-60 w-full object-cover">
+        <div class="p-5 text-center">
+          <h3 class="font-semibold text-xl">MANGALURU</h3>
+          <p class="text-gray-500 text-sm">Coastal & Cultural</p>
+        </div>
+      </div>
+
+      <!-- Jaipur -->
+      <div onclick="redirectToChat('Plan a heritage tour in Jaipur under 12000')"
+           class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1707064124982-1b93bfed9098?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="h-60 w-full object-cover">
+        <div class="p-5 text-center">
+          <h3 class="font-semibold text-xl">BIJAPUR</h3>
+          <p class="text-gray-500 text-sm">Historical & Heritage</p>
+        </div>
+      </div>
+
+      <!-- Switzerland -->
+      <div onclick="redirectToChat('Plan a Switzerland luxury trip under 2 lakh budget')"
+           class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1600112356915-089abb8fc71a?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="h-60 w-full object-cover">
+        <div class="p-5 text-center">
+          <h3 class="font-semibold text-xl">MYSORE</h3>
+          <p class="text-gray-500 text-sm">Royal & Cultural</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold heading-font">
+        What Travelers <span class="gradient-text">Say</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-blue-50 p-6 rounded-2xl shadow">
+        <p class="italic text-gray-700">“Perfect itinerary in minutes. Saved money & time.”</p>
+        <h4 class="font-semibold mt-4">Ananya R</h4>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded-2xl shadow">
+        <p class="italic text-gray-700">“Felt like a local everywhere I went.”</p>
+        <h4 class="font-semibold mt-4">Rahul S</h4>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded-2xl shadow">
+        <p class="italic text-gray-700">“Budget tracking was insanely helpful.”</p>
+        <h4 class="font-semibold mt-4">Meera K</h4>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded-2xl shadow">
+        <p class="italic text-gray-700">“Fast, smart, and beautiful UI.”</p>
+        <h4 class="font-semibold mt-4">Arjun P</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-blue-600 text-white text-center">
+  <h2 class="text-4xl font-bold heading-font mb-6">Start Your Journey Today</h2>
+  <p class="mb-8">Have questions? We’re here to help.</p>
+  <a href="/chat"
+     class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+    Try AI Planner
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>© 2026 TravelMania. All rights reserved.</p>
+    <div class="flex gap-4 text-xl">
+      <i class="fab fa-linkedin hover:text-white"></i>
+      <i class="fab fa-github hover:text-white"></i>
+      <i class="fab fa-instagram hover:text-white"></i>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+function redirectToChat(query) {
+  localStorage.setItem("travel_query", query);
+  window.location.href = "/chat";
+}
+</script>
+
+</body>
+</html>
